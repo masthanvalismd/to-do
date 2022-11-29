@@ -40,11 +40,8 @@ export function ToDoList() {
     updateList(newTasks);
   };
 
-  const handleRemoveItem = (index) => {
-    const newTasks = [...list];
-    newTasks.splice(index, 1);
-    updateList(newTasks);
-  };
+  const handleRemoveItem = (index) => updateList(list.filter((task)=>task.index!==index));
+
 
   return (
     <div className="task-list">
